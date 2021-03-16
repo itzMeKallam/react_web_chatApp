@@ -1,0 +1,26 @@
+import React, {useState, useEffect} from 'react'
+import io from 'socket.io-client'
+import Styles from './App.module.css';
+
+
+const App=()=>{
+  let socket;
+  const PORT = 'http://localhost:8080' || process.env.PORT
+  useEffect(()=>{
+    socket = io(PORT)
+  }, [PORT])
+  return (
+    <div className={Styles.App}>
+      <div className={Styles.messageBox}>
+        <div className={StyleSheet.message}>
+          
+        </div>
+        <div className={Styles.input}>
+            
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default App
